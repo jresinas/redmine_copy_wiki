@@ -1,0 +1,13 @@
+<%= wiki_page_breadcrumb(@page) %>
+
+<h2><%= l(:"copy_wiki.text_copy_wiki") %></h2>
+
+<%= form_tag({:controller => 'projects', :action => 'copy_wiki', :id => @project}) do %>
+<div class="box tabular">
+<p>
+	<label for='project'><%= l(:field_project) %> :</label>
+	<%= select_tag 'project', options_from_collection_for_select(@projects, 'id', 'name') %>
+</p>
+</div>
+<%= submit_tag l(:"copy_wiki.text_copy_wiki") %>
+<% end %>
